@@ -1,0 +1,213 @@
+<div (window:resize)="onResize($event)"></div>
+<div class="grid-container">
+
+  <mat-grid-list [cols]="calcWCOGridColumns()" rowHeight="10px">
+
+    <mat-grid-tile [colspan]="4" rowspan="9" style="width: calc(((4.16667% - 0.958333px) * 3) + 33px) !important;">
+      <h1 style="margin-left: 17px;  margin-top: 10px; margin-bottom: 10px;">Work Centers</h1>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="4" rowspan="1">
+
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="4" rowspan="9">
+      <mat-card class="dashboard-card">
+        
+        <div class="overall-summary">
+          <h3 class="left-content">OEE</h3>
+          <h2 class="right-content">{{ sharedService.wc_plant_summary[0].oee_perc }} %</h2>
+        </div>
+
+        <div style="padding-left: 15px; padding-right: 15px;">
+          <mat-progress-bar mode="determinate" class="red-progress" [value]="sharedService.wc_plant_summary[0].oee_perc"
+            style="height:15px; width: 100%; margin-top: 40px;"
+            *ngIf="sharedService.wc_plant_summary[0].oee_perc <= sharedService.wc_plant_summary[0].colorRange[0].from_range">
+          </mat-progress-bar>
+
+          <mat-progress-bar mode="determinate" class="blue-progress" [value]="sharedService.wc_plant_summary[0].oee_perc"
+            style="height:15px; width: 100%; margin-top: 40px;"
+            *ngIf="(sharedService.wc_plant_summary[0].oee_perc > sharedService.wc_plant_summary[0].colorRange[0].from_range) &&( sharedService.wc_plant_summary[0].oee_perc <= sharedService.wc_plant_summary[0].colorRange[0].to_range)">
+          </mat-progress-bar>
+
+          <mat-progress-bar mode="determinate" class="green-progress" [value]="sharedService.wc_plant_summary[0].oee_perc"
+            style="height:15px; width: 100%; margin-top: 40px;"
+            *ngIf="sharedService.wc_plant_summary[0].oee_perc > sharedService.wc_plant_summary[0].colorRange[0].to_range">
+          </mat-progress-bar>
+        </div>
+
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="4" rowspan="9">
+
+      <mat-card class="dashboard-card">
+        <div class="overall-summary">
+          <h3 class="left-content">Availability</h3>
+          <h2 class="right-content">{{sharedService.wc_plant_summary[0].availability_perc}} %</h2>
+        </div>
+
+        <div style="padding-left: 15px; padding-right: 15px;">
+          <mat-progress-bar mode="determinate" class="red-progress"
+            [value]="sharedService.wc_plant_summary[0].availability_perc"
+            style="height:15px; width: 100%; margin-top: 40px;"
+            *ngIf="sharedService.wc_plant_summary[0].availability_perc <= sharedService.wc_plant_summary[0].colorRange[1].from_range">
+          </mat-progress-bar>
+
+          <mat-progress-bar mode="determinate" class="blue-progress"
+            [value]="sharedService.wc_plant_summary[0].availability_perc"
+            style="height:15px; width: 100%; margin-top: 40px;"
+            *ngIf="(sharedService.wc_plant_summary[0].availability_perc > sharedService.wc_plant_summary[0].colorRange[1].from_range) &&( sharedService.wc_plant_summary[0].availability_perc <= sharedService.wc_plant_summary[0].colorRange[1].to_range)">
+          </mat-progress-bar>
+
+          <mat-progress-bar mode="determinate" class="green-progress"
+            [value]="sharedService.wc_plant_summary[0].availability_perc"
+            style="height:15px; width: 100%; margin-top: 40px;"
+            *ngIf="sharedService.wc_plant_summary[0].availability_perc > sharedService.wc_plant_summary[0].colorRange[1].to_range">
+          </mat-progress-bar>
+        </div>
+
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="4" rowspan="9">
+      <mat-card class="dashboard-card">
+        <div class="overall-summary">
+          <h3 class="left-content">Performance</h3>
+          <h2 class="right-content">{{sharedService.wc_plant_summary[0].performance_perc}} %</h2>
+        </div>
+
+        <div style="padding-left: 15px; padding-right: 15px;">
+          <mat-progress-bar mode="determinate" class="red-progress"
+            [value]="sharedService.wc_plant_summary[0].performance_perc" style="height:15px; width: 100%; margin-top: 40px;"
+            *ngIf="sharedService.wc_plant_summary[0].performance_perc <= sharedService.wc_plant_summary[0].colorRange[2].from_range">
+          </mat-progress-bar>
+
+          <mat-progress-bar mode="determinate" class="blue-progress"
+            [value]="sharedService.wc_plant_summary[0].performance_perc" style="height:15px; width: 100%; margin-top: 40px;"
+            *ngIf="(sharedService.wc_plant_summary[0].performance_perc > sharedService.wc_plant_summary[0].colorRange[2].from_range) &&( sharedService.wc_plant_summary[0].performance_perc <= sharedService.wc_plant_summary[0].colorRange[2].to_range)">
+          </mat-progress-bar>
+
+          <mat-progress-bar mode="determinate" class="green-progress"
+            [value]="sharedService.wc_plant_summary[0].performance_perc" style="height:15px; width: 100%; margin-top: 40px;"
+            *ngIf="sharedService.wc_plant_summary[0].performance_perc > sharedService.wc_plant_summary[0].colorRange[2].to_range">
+          </mat-progress-bar>
+        </div>
+
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="4" rowspan="9">
+      <mat-card class="dashboard-card">
+        <div class="overall-summary">
+          <h3 class="left-content">Quality</h3>
+          <h2 class="right-content">{{sharedService.wc_plant_summary[0].quality_perc}} %</h2>
+        </div>
+
+        <div style="padding-left: 15px; padding-right: 15px;">
+          <mat-progress-bar mode="determinate" class="red-progress" [value]="sharedService.wc_plant_summary[0].quality_perc"
+            style="height:15px; width: 100%; margin-top: 40px;"
+            *ngIf="sharedService.wc_plant_summary[0].quality_perc <= sharedService.wc_plant_summary[0].colorRange[3].from_range">
+          </mat-progress-bar>
+
+          <mat-progress-bar mode="determinate" class="blue-progress"
+            [value]="sharedService.wc_plant_summary[0].quality_perc" style="height:15px; width: 100%; margin-top: 40px;"
+            *ngIf="(sharedService.wc_plant_summary[0].quality_perc > sharedService.wc_plant_summary[0].colorRange[3].from_range) &&( sharedService.wc_plant_summary[0].quality_perc <= sharedService.wc_plant_summary[0].colorRange[3].to_range)">
+          </mat-progress-bar>
+
+          <mat-progress-bar mode="determinate" class="green-progress"
+            [value]="sharedService.wc_plant_summary[0].quality_perc" style="height:15px; width: 100%; margin-top: 40px;"
+            *ngIf="sharedService.wc_plant_summary[0].quality_perc > sharedService.wc_plant_summary[0].colorRange[3].to_range">
+          </mat-progress-bar>
+        </div>
+
+      </mat-card>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+
+
+
+  <mat-grid-list [cols]="16" rowHeight="10px">
+
+    <mat-grid-tile [colspan]="calcWCGridColumns()" rowspan="34" *ngFor="let WC of sharedService.WCSummary">
+      <mat-card class="dashboard-card" cdkDrop id="oee-mat-card" (click)="moveTo(WC.mach_desc, WC.mach_code)">
+
+        <mat-card-header>
+          <mat-card-title>
+            {{WC.mach_desc}}
+          </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <span>
+
+            <div class="led-box1" style="margin-top: -12px;">
+              <div class="led-green1" *ngIf="WC.machine_status == '2'"></div>
+              <div class="led-orange1" *ngIf="WC.machine_status == '1'"></div>
+              <div class="led-red1" *ngIf="WC.machine_status == '0'"></div>
+            </div>
+
+            <h4 class="plant-text" *ngIf="WC.order_number != 'ORDER NOT ASSIGNED'" style="font-size: 11px;">
+              {{WC.material_descp}}</h4>
+            <h4 class="plant-text" *ngIf="WC.order_number == 'ORDER NOT ASSIGNED'"
+              style="color: #ec3131; font-size: 11px;">
+              {{WC.order_number}}</h4>
+          </span>
+          <br>
+          <br>
+
+          <mat-grid-list cols="3">
+            
+            <mat-grid-tile>
+              <circle-progress [percent]="WC.availability_perc" [titleColor]="'#608098'" [unitsColor]="'#608098'"
+                [unitsFontSize]="30" [unitsFontWeight]="800" [responsive]="true" [titleFontSize]="30"
+                [titleFontWeight]="800" subtitle="Availability" [subtitleFontSize]="20" [subtitleFontWeight]="800"
+                [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="8" [outerStrokeColor]="WC.availability_color"
+                [innerStrokeColor]="'#d7dee3'" [animation]="true" [animationDuration]="300"></circle-progress>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <circle-progress [percent]="WC.performance_perc" [titleColor]="'#608098'" [unitsColor]="'#608098'"
+                [unitsFontSize]="30" [unitsFontWeight]="800" [responsive]="true" [titleFontSize]="30"
+                [titleFontWeight]="800" subtitle="Performance" [subtitleFontSize]="20" [subtitleFontWeight]="800"
+                [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="8" [outerStrokeColor]="WC.performance_color"
+                [innerStrokeColor]="'#d7dee3'" [animation]="true" [animationDuration]="300"></circle-progress>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <circle-progress [percent]="WC.quality_perc" [titleColor]="'#608098'" [unitsColor]="'#608098'"
+                [unitsFontSize]="30" [unitsFontWeight]="800" [responsive]="true" [titleFontSize]="30"
+                [titleFontWeight]="800" subtitle="Quality" [subtitleFontSize]="20" [subtitleFontWeight]="800"
+                [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="8" [outerStrokeColor]="WC.quality_color"
+                [innerStrokeColor]="'#d7dee3'" [animation]="true" [animationDuration]="300"></circle-progress>
+            </mat-grid-tile>
+          </mat-grid-list>
+
+          <span>
+            <!-- <mat-icon class="a-button" style="float:right">eject</mat-icon> -->
+            <h1 class="right">{{WC.oee_perc}} %</h1>
+            <h2 class="grey">OEE</h2>
+          </span>
+
+          <mat-progress-bar mode="determinate" class="red-progress" [value]="WC.oee_perc"
+            style="height:20px; width: 100%; margin-top: -10px;" *ngIf="WC.oee_perc <= WC.colorRange[0].from_range">
+          </mat-progress-bar>
+
+          <mat-progress-bar mode="determinate" class="blue-progress" [value]="WC.oee_perc"
+            style="height:20px; width: 100%; margin-top: -10px;"
+            *ngIf="WC.oee_perc > WC.colorRange[0].from_range && WC.oee_perc <= WC.colorRange[0].to_range">
+          </mat-progress-bar>
+
+          <mat-progress-bar mode="determinate" class="green-progress" [value]="WC.oee_perc"
+            style="height:20px; width: 100%; margin-top: -10px;" *ngIf="WC.oee_perc > WC.colorRange[0].to_range">
+          </mat-progress-bar>
+
+        </mat-card-content>
+
+      </mat-card>
+
+    </mat-grid-tile>
+
+  </mat-grid-list>
+</div>
