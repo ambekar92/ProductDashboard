@@ -20,6 +20,7 @@
         </div>
 
         <div style="padding-left: 15px; padding-right: 15px;">
+          
           <mat-progress-bar mode="determinate" class="red-progress" [value]="sharedService.wc_plant_summary[0].oee_perc"
             style="height:15px; width: 100%; margin-top: 40px;"
             *ngIf="sharedService.wc_plant_summary[0].oee_perc <= sharedService.wc_plant_summary[0].colorRange[0].from_range">
