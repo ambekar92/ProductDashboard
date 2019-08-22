@@ -275,9 +275,7 @@ import {TableComponent} from './DemoPages/Material/Datatable/table/table.compone
 import {MatTabsComponent} from './DemoPages/Material/Layout/mat-tabs/mat-tabs.component';
 import {MatButtonsComponent} from './DemoPages/Material/ButtonsIndicators/mat-buttons/mat-buttons.component';
 import {MatProgressBarComponent} from './DemoPages/Material/ButtonsIndicators/mat-progress-bar/mat-progress-bar.component';
-import { WCDashboardComponent } from './DemoPages/wc-dashboard/wc-dashboard.component';
-import { PlantDashboardComponent } from './DemoPages/plant-dashboard/plant-dashboard.component';
-import { MainDashboardComponent } from './DemoPages/main-dashboard/main-dashboard.component';
+import { DataTableComponent } from './common-components/data-table/data-table.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -460,9 +458,7 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     MatButtonsComponent,
     MatProgressBarComponent,
     NgbdSortableHeaderDirective,
-    WCDashboardComponent,
-    PlantDashboardComponent,
-    MainDashboardComponent,
+    DataTableComponent,
 
   ],
   imports: [

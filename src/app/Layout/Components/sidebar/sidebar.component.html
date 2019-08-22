@@ -18,70 +18,138 @@
         <div class="v-sidebar-menu vsm-default">
           <div class="vsm-list">
             <ngb-accordion [destroyOnHide]="false" [closeOthers]="true" [activeIds]="extraParameter">
+
               <ngb-panel>
                 <ng-template ngbPanelHeader>
                   <div class="vsm-header">Main Navigation</div>
                 </ng-template>
               </ngb-panel>
-              <ngb-panel id="dashboardsMenu">
+
+              <ngb-panel id="customDashboardsMenu">
                 <ng-template ngbPanelHeader>
                   <button ngbPanelToggle class="vsm-link">
                     <i class="vsm-icon pe-7s-rocket"></i>
-                    <span class="vsm-title">Dashboards</span>
+                    <span class="vsm-title">Dashboard</span>
                     <i class="vsm-arrow"></i>
                   </button>
                 </ng-template>
+
                 <ng-template ngbPanelContent>
                   <div class="vsm-dropdown">
                     <div class="vsm-list">
 
                       <div class="vsm-item">
-                        <a routerLink="/dashboards/wc-dashboard" routerLinkActive="active-item" class="vsm-link"><span
-                            class="vsm-title">WC Dashboard</span></a>
-                      </div>
-                      
-                      <div class="vsm-item"><a routerLink="" routerLinkActive="active-item"
-                          [routerLinkActiveOptions]="{exact: true}" class="vsm-link"><span
-                            class="vsm-title">Analytics</span></a>
+                        <a routerLink="/dashboard/plant-dashboard" routerLinkActive="active-item" [routerLinkActiveOptions]="{exact: true}" class="vsm-link"><span
+                            class="vsm-title">Plant Dashboard</span></a>
                       </div>
 
                       <div class="vsm-item">
-                        <a routerLink="/dashboards/advertisement" routerLinkActive="active-item" class="vsm-link"><span
-                            class="vsm-title">Advertisement</span></a>
+                        <a routerLink="/dashboard/wc-dashboard" routerLinkActive="active-item" class="vsm-link"><span
+                            class="vsm-title">WC Dashboard</span></a>
                       </div>
+                      
                       <div class="vsm-item">
-                        <a routerLink="/dashboards/management" routerLinkActive="active-item" class="vsm-link"><span
-                            class="vsm-title">Management</span></a>
+                        <a routerLink="/dashboard/oee-dashboard" routerLinkActive="active-item" class="vsm-link"><span
+                            class="vsm-title">OEE Dashboard</span></a>
                       </div>
+                      
                       <div class="vsm-item">
-                        <a routerLink="/dashboards/helpdesk" routerLinkActive="active-item" class="vsm-link"><span
-                            class="vsm-title">Helpdesk</span></a>
+                        <a routerLink="/dashboard/energy-dashboard" routerLinkActive="active-item" class="vsm-link"><span
+                            class="vsm-title">Energy Dashboard</span></a>
                       </div>
+                      
                       <div class="vsm-item">
-                        <a routerLink="/dashboards/monitoring" routerLinkActive="active-item" class="vsm-link"><span
-                            class="vsm-title">Monitoring</span></a>
+                        <a routerLink="/dashboard/abb-dashboard" routerLinkActive="active-item" class="vsm-link"><span
+                            class="vsm-title">ABB Dashboard</span></a>
                       </div>
+                      
                       <div class="vsm-item">
-                        <a routerLink="/dashboards/crypto" routerLinkActive="active-item" class="vsm-link"><span
-                            class="vsm-title">Crypto</span></a>
+                        <a routerLink="/dashboard/fault-dashboard" routerLinkActive="active-item" class="vsm-link"><span
+                            class="vsm-title">Fault Dashboard</span></a>
                       </div>
-                      <div class="vsm-item">
-                        <a routerLink="/dashboards/project-management" routerLinkActive="active-item"
-                          (click)="activeId='dashboardsMenu'" class="vsm-link"><span class="vsm-title">Project
-                            Management</span></a>
-                      </div>
-                      <div class="vsm-item">
-                        <a routerLink="/dashboards/product" routerLinkActive="active-item" class="vsm-link"><span
-                            class="vsm-title">Product</span></a>
-                      </div>
-                      <div class="vsm-item">
-                        <a routerLink="/dashboards/statistics" routerLinkActive="active-item" class="vsm-link"><span
-                            class="vsm-title">Statistics</span></a>
-                      </div>
+                    
                     </div>
                   </div>
                 </ng-template>
               </ngb-panel>
+
+              <ngb-panel id="manualEntryMenu">
+                  <ng-template ngbPanelHeader>
+                    <button ngbPanelToggle class="vsm-link">
+                      <i class="vsm-icon pe-7s-rocket"></i>
+                      <span class="vsm-title">Manual Entry</span>
+                      <i class="vsm-arrow"></i>
+                    </button>
+                  </ng-template>
+                  <ng-template ngbPanelContent>
+                    <div class="vsm-dropdown">
+                      <div class="vsm-list">
+  
+                        <div class="vsm-item">
+                          <a routerLink="/manual-entry/jobcard-generation" routerLinkActive="active-item" class="vsm-link"><span
+                              class="vsm-title">Jobcard Generation</span></a>
+                        </div>
+                      
+                      </div>
+                    </div>
+                  </ng-template>
+                </ngb-panel>
+
+              <ngb-panel id="dashboardsMenu">
+                  <ng-template ngbPanelHeader>
+                    <button ngbPanelToggle class="vsm-link">
+                      <i class="vsm-icon pe-7s-rocket"></i>
+                      <span class="vsm-title">Dashboards</span>
+                      <i class="vsm-arrow"></i>
+                    </button>
+                  </ng-template>
+                  <ng-template ngbPanelContent>
+                    <div class="vsm-dropdown">
+                      <div class="vsm-list">
+
+                        <div class="vsm-item"><a routerLink="" routerLinkActive="active-item"
+                            [routerLinkActiveOptions]="{exact: true}" class="vsm-link"><span
+                              class="vsm-title">Analytics</span></a>
+                        </div>
+  
+                        <div class="vsm-item">
+                          <a routerLink="/dashboards/advertisement" routerLinkActive="active-item" class="vsm-link"><span
+                              class="vsm-title">Advertisement</span></a>
+                        </div>
+                        <div class="vsm-item">
+                          <a routerLink="/dashboards/management" routerLinkActive="active-item" class="vsm-link"><span
+                              class="vsm-title">Management</span></a>
+                        </div>
+                        <div class="vsm-item">
+                          <a routerLink="/dashboards/helpdesk" routerLinkActive="active-item" class="vsm-link"><span
+                              class="vsm-title">Helpdesk</span></a>
+                        </div>
+                        <div class="vsm-item">
+                          <a routerLink="/dashboards/monitoring" routerLinkActive="active-item" class="vsm-link"><span
+                              class="vsm-title">Monitoring</span></a>
+                        </div>
+                        <div class="vsm-item">
+                          <a routerLink="/dashboards/crypto" routerLinkActive="active-item" class="vsm-link"><span
+                              class="vsm-title">Crypto</span></a>
+                        </div>
+                        <div class="vsm-item">
+                          <a routerLink="/dashboards/project-management" routerLinkActive="active-item"
+                            (click)="activeId='dashboardsMenu'" class="vsm-link"><span class="vsm-title">Project
+                              Management</span></a>
+                        </div>
+                        <div class="vsm-item">
+                          <a routerLink="/dashboards/product" routerLinkActive="active-item" class="vsm-link"><span
+                              class="vsm-title">Product</span></a>
+                        </div>
+                        <div class="vsm-item">
+                          <a routerLink="/dashboards/statistics" routerLinkActive="active-item" class="vsm-link"><span
+                              class="vsm-title">Statistics</span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </ng-template>
+                </ngb-panel>
+
               <ngb-panel id="pagesMenu">
                 <ng-template ngbPanelHeader>
                   <button ngbPanelToggle class="vsm-link">

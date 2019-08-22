@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WCDashboardComponent } from './wc-dashboard.component';
+import { DataTableComponent } from './data-table.component';
 
-describe('WCDashboardComponent', () => {
-  let component: WCDashboardComponent;
-  let fixture: ComponentFixture<WCDashboardComponent>;
+describe('DataTableComponent', () => {
+  let component: DataTableComponent;
+  let fixture: ComponentFixture<DataTableComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WCDashboardComponent ]
+      declarations: [ DataTableComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WCDashboardComponent);
+    fixture = TestBed.createComponent(DataTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
