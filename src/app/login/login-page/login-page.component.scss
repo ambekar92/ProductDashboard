@@ -1,0 +1,86 @@
+.logo-image {
+    width: 10%;
+    margin-left: 45%;
+}
+
+
+.social_icon span {
+    font-size: 60px;
+    margin-left: 10px;
+    color: #FFC312;
+}
+
+.social_icon span:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.card-header h3 {
+    font-family: 'Nunito Sans', sans-serif !important;
+    color: white;
+    padding-top: 16px;
+}
+
+.social_icon {
+    position: absolute;
+    right: 20px;
+    top: -45px;
+}
+
+.input-group-prepend span {
+    width: 50px;
+    background-color: #b1bcca;
+    color: black;
+    border: 0 !important;
+}
+
+input:focus {
+    outline: 0 0 0 0 !important;
+    box-shadow: 0 0 0 0 !important;
+}
+
+.remember {
+    color: white;
+}
+
+.remember input {
+    font-family: 'Nunito Sans', sans-serif !important;
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
+.login_btn {
+    font-family: 'Nunito Sans', sans-serif !important;
+    font-size: 14px;
+    color: white;
+    background-color: #6459f3;
+    width: 90%;
+}
+
+.login_btn:hover {
+    font-family: 'Nunito Sans', sans-serif !important;
+    color: rgb(255, 255, 255);
+    background-color: rgb(10, 0, 102);
+}
+
+.links {
+    color: white;
+}
+
+.links a {
+    font-family: 'Nunito Sans', sans-serif !important;
+    margin-left: 4px;
+}
+
+.form-group {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form-field {
+    width: 95%;
+}

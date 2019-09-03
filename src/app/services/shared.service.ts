@@ -5,6 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class SharedService {
 
+  // public BaseURL: any = "http://172.16.16.161:3000/";
+  public BaseURL: any = "http://172.16.16.29:3000/";
+
   mobileView: any = 0;
 
   WCSummary: any = [

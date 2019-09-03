@@ -140,8 +140,16 @@ import { MatButtonsComponent } from './DemoPages/Material/ButtonsIndicators/mat-
 import { MatProgressBarComponent } from './DemoPages/Material/ButtonsIndicators/mat-progress-bar/mat-progress-bar.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { ManualEntryModule } from './manual-entry/manual-entry.module';
+import { LoginModule } from './login/login.module';
 
 const routes: Routes = [
+
+  {
+    path: '',
+    redirectTo: '/login-page',
+    pathMatch: 'full',
+  },
+
   {
     path: '',
     component: BaseLayoutComponent,
@@ -152,7 +160,7 @@ const routes: Routes = [
       { path: 'manual-entry', loadChildren: () => ManualEntryModule, data: { extraParameter: 'manualEntryMenu' } },
 
       // Dashboards
-      { path: '', component: AnalyticsComponent, data: { extraParameter: 'dashboardsMenu' } },
+      // { path: '', component: AnalyticsComponent, data: { extraParameter: 'dashboardsMenu' } },
       { path: 'dashboards/advertisement', component: AdvertisementComponent, data: { extraParameter: 'dashboardsMenu' } },
       { path: 'dashboards/management', component: ManagementComponent, data: { extraParameter: 'dashboardsMenu' } },
       { path: 'dashboards/helpdesk', component: HelpdeskComponent, data: { extraParameter: 'dashboardsMenu' } },
@@ -281,6 +289,11 @@ const routes: Routes = [
     path: '',
     component: PagesLayoutComponent,
     children: [
+
+      //Login
+
+      { path: '', loadChildren: () => LoginModule, data: { extraParameter: 'loginMenu' } },
+
 
       // User Pages
 

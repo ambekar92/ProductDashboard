@@ -319,7 +319,7 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
 
     // DEMO PAGES
 
-    // Dashboards
+    // Dashboards...........................
     AnalyticsComponent,
     AdvertisementComponent,
     ManagementComponent,
@@ -330,7 +330,7 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     ProductComponent,
     StatisticsComponent,
 
-    // Applications
+    // Applications.....................
     ChatComponent,
     MailboxComponent,
     MaterialTabsComponent,

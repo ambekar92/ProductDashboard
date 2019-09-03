@@ -3,12 +3,19 @@ import { CommonModule } from '@angular/common';
 
 import { ManualEntryRoutingModule } from './manual-entry-routing.module';
 import { JobcardGenerationComponent } from './jobcard-generation/jobcard-generation.component';
+import {NgSelectModule} from '@ng-select/ng-select';
+import { FileUploadComponent } from './file-upload/file-upload.component';
+import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
-  declarations: [JobcardGenerationComponent],
+  declarations: [JobcardGenerationComponent, FileUploadComponent],
   imports: [
     CommonModule,
-    ManualEntryRoutingModule
+    ManualEntryRoutingModule,
+    NgSelectModule,
+    FormsModule,
+    NgbModule    
   ]
 })
 export class ManualEntryModule { }

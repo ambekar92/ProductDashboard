@@ -1,0 +1,76 @@
+<div class="h-100 bg-plum-plate bg-animation">
+  <div class="d-flex h-100 justify-content-center align-items-center">
+    <div class="mx-auto app-login-box col-md-8">
+
+      <div class="mx-auto mb-3">
+        <img class="logo-image" src="./../../../assets/images/logo.png" />
+      </div>
+
+      <div class="modal-dialog w-100 mx-auto">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="h5 modal-title text-center">
+              <h4 class="mt-2">
+                <div>Welcome to SCH,</div>
+                <span>Please sign in to your account below.</span>
+              </h4>
+            </div>
+            <!-- <div id="exampleInputGroup1" role="group" aria-describedby="exampleInputGroup1__BV_description_"
+              class="form-group">
+              <div><input id="exampleInput1" type="email" placeholder="Enter email..." required="required"
+                  aria-required="true" class="form-control" aria-describedby="exampleInputGroup1__BV_description_">
+                <small tabindex="-1" id="exampleInputGroup1__BV_description_" class="form-text text-muted">We'll never
+                  share your email with anyone else.
+                </small>
+              </div>
+            </div>
+            <div id="exampleInputGroup2" role="group" class="form-group">
+              <div><input id="exampleInput2" type="password" placeholder="Enter password..." required="required"
+                  aria-required="true" class="form-control"></div>
+            </div>
+            <div class="custom-control custom-checkbox">
+            </div> -->
+
+            <form>
+
+              <div class="input-group form-group">
+                <mat-form-field class="login-form-field">
+                  <input matInput placeholder="Username" value="" [(ngModel)]="Username"
+                    [ngModelOptions]="{standalone: true}">
+                </mat-form-field>
+              </div>
+  
+              <div class="input-group form-group">
+                <mat-form-field class="login-form-field">
+                  <input matInput type="password" placeholder="Password" value="" [(ngModel)]="Password"
+                    [ngModelOptions]="{standalone: true}">
+                </mat-form-field>
+              </div>
+  
+              <div class="form-group">
+                <input type="submit" value="Login" class="btn login_btn" (click)="getAuthorization()">
+              </div>
+  
+              <!-- <label style="margin-left: 9px;">
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+              </label> -->
+  
+            </form>
+
+          </div>
+          <!-- <div class="modal-footer clearfix">
+            <div class="float-left">
+
+            </div>
+            <div class="float-right">
+              <button type="submit" class="btn btn-primary btn-lg">Login to Dashboard</button>
+            </div>
+          </div> -->
+        </div>
+      </div>
+      <div class="text-center text-white opacity-8 mt-3">
+        Copyright © EIM Solutions 2019
+      </div>
+    </div>
+  </div>
+</div>

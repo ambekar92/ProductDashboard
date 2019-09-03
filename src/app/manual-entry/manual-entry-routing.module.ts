@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { JobcardGenerationComponent } from './jobcard-generation/jobcard-generation.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'jobcard-generation',
     component: JobcardGenerationComponent
+  },
+  {
+    path: 'file-upload',
+    component: FileUploadComponent
   },
 ];
 

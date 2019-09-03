@@ -1,3 +1,123 @@
-<p>
-  jobcard-generation works!
-</p>
+<!-- <app-page-title [heading]="heading" [subheading]="subheading" [icon]="icon"></app-page-title> -->
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="card main-card mb-3">
+      <div class="card-header">
+        Job Card Generation
+      </div>
+      <div class="card-body">
+        <div class="row">
+
+          <div class="col-md-6">
+            <b class="d-block mb-1">Order Number</b>
+            <ng-select [items]="" bindLabel="name" placeholder="Select Order Number">
+              <!-- [(ngModel)]="selectedCity"> -->
+            </ng-select>
+            <p class="mt-1 mb-3">
+              <!-- Selected city: {{selectedCity | json}} -->
+            </p>
+
+            <b class="d-block mb-1">Part Number</b>
+            <input name="email" id="part_no" placeholder="Part Number" type="text" class="form-control">
+
+            <p class="mt-1 mb-3">
+              <!-- Selected city: {{selectedCity | json}} -->
+            </p>
+
+            <b class="d-block mb-1">Customer</b>
+            <input name="email" id="customer" placeholder="Customer" type="text" class="form-control">
+
+
+            <p class="mt-1 mb-3">
+              <!-- Selected city: {{selectedCity | json}} -->
+            </p>
+          </div>
+
+          <div class="col-md-6">
+
+            <b class="d-block mb-1">Issued Quantity</b>
+            <input name="email" id="issued_qty" placeholder="Issued Quantity" type="text" class="form-control">
+
+
+            <p class="mt-1 mb-3">
+              <!-- Selected city: {{selectedCity | json}} -->
+            </p>
+
+
+            <b class="d-block mb-1">Per Day Production Quantity</b>
+
+            <div class="row" *ngIf="!(edit)">
+              <div class="col-md-10"><input name="email" id="per_day_qty" placeholder="Per Day Production Quantity"
+                  type="text" class="form-control" disabled></div>
+              <div class="col-md-2"><button class="mb-2 mr-2 btn-icon btn-shadow btn-dashed btn btn-outline-secondary"
+                  (click)="editAccess()"><i class="pe-7s-pen btn-icon-wrapper"> </i>Edit</button></div>
+            </div>
+
+
+            <div class="row" *ngIf="edit">
+              <div class="col-md-10"><input name="email" id="per_day_qty" placeholder="Per Day Production Quantity"
+                  type="text" class="form-control"></div>
+              <div class="col-md-2"><button class="mb-2 mr-2 btn-icon btn-shadow btn-dashed btn btn-outline-secondary"
+                  (click)="editAccess()"><i class="pe-7s-pen btn-icon-wrapper"> </i>Edit</button></div>
+            </div>
+
+
+            <button class="btn-wide mb-2 mr-2 btn-pill btn btn-primary" style="margin-top: 36px;">Submit</button>
+
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- <div class="card main-card mb-3">
+        <div class="card-body"> -->
+    <div class="row">
+
+      <div class="col-md-12">
+
+        <div class="main-card mb-3 card">
+          <div class="card-body">
+            <h5 class="card-title">Job card Details</h5>
+            <table class="mb-0 table table-bordered">
+              <thead>
+                <tr>
+                  <th>Order Number</th>
+                  <th>Part Number</th>
+                  <th>Customer</th>
+                  <th>Issued Quantity</th>
+                  <th>Per day production Quantity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">10009081</th>
+                  <td>45678321</td>
+                  <td>ZXCVB</td>
+                  <td>1577</td>
+                  <td>600</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="col-md-12 text-center">
+          <button class="btn-wide mb-2 mr-2 btn-pill btn btn-primary" style="margin-top: 36px;">Confirm</button>
+        </div>
+
+
+
+
+      </div>
+
+    </div>
+
+    <!-- </div>
+      </div> -->
+  </div>
+</div>
