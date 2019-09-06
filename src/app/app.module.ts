@@ -276,6 +276,8 @@ import {MatTabsComponent} from './DemoPages/Material/Layout/mat-tabs/mat-tabs.co
 import {MatButtonsComponent} from './DemoPages/Material/ButtonsIndicators/mat-buttons/mat-buttons.component';
 import {MatProgressBarComponent} from './DemoPages/Material/ButtonsIndicators/mat-progress-bar/mat-progress-bar.component';
 import { DataTableComponent } from './common-components/data-table/data-table.component';
+import { QRCodeModule } from 'angularx-qrcode';
+import {NgxPrintModule} from 'ngx-print';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -462,6 +464,11 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
 
   ],
   imports: [
+
+    //Add Ons
+    QRCodeModule,
+    NgxPrintModule,
+
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

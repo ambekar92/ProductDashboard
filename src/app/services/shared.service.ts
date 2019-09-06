@@ -5,8 +5,10 @@ import { Injectable } from '@angular/core';
 })
 export class SharedService {
 
-  // public BaseURL: any = "http://172.16.16.161:3000/";
-  public BaseURL: any = "http://172.16.16.29:3000/";
+  // public BaseURL = "http://"+ this.getCurrentIP() + ":4200/";
+  // public BaseURL: any = "http://172.16.16.161:4200/";
+  public BaseURL: any = "http://61.12.64.92:4200/";
+
 
   mobileView: any = 0;
 
@@ -244,6 +246,14 @@ export class SharedService {
   ];
 
   constructor() { }
+
+  public getCurrentIP() {
+    let fullURL = window.location.href;
+    let URL = fullURL.split('/')
+    let IP = URL[2];
+    let BaseURL = IP.split(':');
+    return BaseURL[0];
+  }
 
 
 }

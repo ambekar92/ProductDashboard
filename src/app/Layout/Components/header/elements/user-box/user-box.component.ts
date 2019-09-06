@@ -12,6 +12,8 @@ export class UserBoxComponent implements OnInit {
     this.globals.toggleDrawer = !this.globals.toggleDrawer;
   }
 
+  userName = localStorage.getItem('UserName');
+
   constructor(public globals: ThemeOptions, private loginApiService: LoginApiService, private router: Router) {
   }
 
@@ -19,7 +21,7 @@ export class UserBoxComponent implements OnInit {
   }
 
   logout(){
-    this.loginApiService.UserName = "";
+    // this.loginApiService.UserName = "";
     this.router.navigate(['/login-page'])
   }
 

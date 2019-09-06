@@ -7,6 +7,8 @@ import {NgSelectModule} from '@ng-select/ng-select';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { QRCodeModule } from 'angularx-qrcode';
+import { NgxPrintModule } from 'ngx-print';
 
 @NgModule({
   declarations: [JobcardGenerationComponent, FileUploadComponent],
@@ -15,7 +17,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ManualEntryRoutingModule,
     NgSelectModule,
     FormsModule,
-    NgbModule    
+    NgbModule,
+    QRCodeModule,
+    NgxPrintModule
   ]
 })
 export class ManualEntryModule { }

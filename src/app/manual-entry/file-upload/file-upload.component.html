@@ -18,7 +18,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6"> <button class="btn-wide mb-2 mr-2 btn-pill btn btn-primary">Upload</button></div>
+          <div class="col-md-6"> <button class="btn-wide mb-2 mr-2 btn-pill btn btn-primary" (click)="SubmitUploadedFiles()">Upload</button></div>
         </div>
 
       </div>
@@ -61,11 +61,11 @@
 
 
 
-<div class="card mb-3">
+<!-- <div class="card mb-3">
   <div class="card-header-tab card-header">
     <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
       <i class="header-icon lnr-laptop-phone mr-3 text-muted opacity-6"> </i>
-      Dynamic Tables
+      Job card Details
     </div>
     <div class="btn-actions-pane-right">
       <div role="group" class="btn-group-sm btn-group">
@@ -77,7 +77,7 @@
   <form>
     <div class="p-2">
       <div class="form-group form-inline mb-0">
-        Full text search:
+        Search:
         <input class="form-control ml-2" type="text" name="searchTerm" [(ngModel)]="service.searchTerm"/>
         <span class="ml-3" *ngIf="service.loading$ | async">Loading...</span>
       </div>
@@ -121,4 +121,4 @@
       </div>
     </div>
   </form>
-</div>
+</div> -->

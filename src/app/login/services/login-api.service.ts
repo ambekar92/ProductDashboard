@@ -9,7 +9,7 @@ export class LoginApiService {
 
   constructor(public sharedService: SharedService, public http: HttpClient) { }
 
-  UserName: any;
+  // UserName: any;
   
     // fetch login api
     fetchLoginAPI(username, password) {

@@ -156,8 +156,8 @@ const routes: Routes = [
     children: [
 
       // SCH Dashboards
-      { path: 'dashboard', loadChildren: () => DashboardModule, data: { extraParameter: 'customDashboardsMenu' } },
-      { path: 'manual-entry', loadChildren: () => ManualEntryModule, data: { extraParameter: 'manualEntryMenu' } },
+      { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule', data: { extraParameter: 'customDashboardsMenu' } },
+      { path: 'manual-entry', loadChildren: './manual-entry/manual-entry.module#ManualEntryModule' , data: { extraParameter: 'manualEntryMenu' } },
 
       // Dashboards
       // { path: '', component: AnalyticsComponent, data: { extraParameter: 'dashboardsMenu' } },

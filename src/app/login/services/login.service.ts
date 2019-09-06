@@ -16,15 +16,14 @@ export class LoginService {
         .subscribe((response: any) => {
           if (response.status == 1) {
             localStorage.setItem('token', response.token),
-            localStorage.setItem('UserName', response.user.name)
-            this.loginApiService.UserName = response.user.name;
+            localStorage.setItem('UserName', response.user.name),
+            // this.loginApiService.UserName = response.user.name;
             this.router.navigate(['/manual-entry/jobcard-generation'])
           }else {
             this._snackBar.open(response.msg, "", {
               duration: 3000,
             });
           }
-
         })
     }
 }

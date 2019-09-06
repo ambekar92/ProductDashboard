@@ -7,6 +7,7 @@ import {Country} from './../../DemoPages/Tables/dynamic/demo/country';
 import {NgbdSortableHeaderDirective, SortEvent} from './../../DemoPages/Tables/dynamic/demo/sortable.directive';
 import { FileUploadService } from '../services/file-upload/file-upload.service';
 import { FileUploadApiService } from '../services/file-upload/file-upload-api.service';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-file-upload',
@@ -27,7 +28,7 @@ export class FileUploadComponent implements OnInit {
   // @ts-ignore
   @ViewChildren(NgbdSortableHeaderDirective) headers: QueryList<NgbdSortableHeaderDirective>;
 
-  constructor(public service: CountryService, private fileUploadService: FileUploadService, private fileUploadApiService: FileUploadApiService) {
+  constructor(public service: CountryService, public fileUploadService: FileUploadService, public fileUploadApiService: FileUploadApiService, public snackBar: MatSnackBar,) {
     this.countries$ = service.countries$;
     this.total$ = service.total$;
   }
@@ -58,5 +59,29 @@ export class FileUploadComponent implements OnInit {
     this.service.sortDirection = direction;
   }
 
+
+  SubmitUploadedFiles() {
+    // this.spinner.show();
+    this.fileUploadApiService.fetchFileUpload(this.File)
+      .subscribe((response: any) => {
+        // alert(this.File);
+        if (response.status == 1) {
+          this.snackBar.open(response.msg, "", {
+            duration: 4000,
+          });
+
+          let infoArea2 = document.getElementById('inputGroupFile01');
+          infoArea2.textContent = "";
+
+          this.fileUploadService.fetchJobcardData();
+        } else {
+          this.snackBar.open(response.msg, "", {
+            duration: 4000,
+          });
+        }
+        // this.spinner.hide();
+      });
+    this.File = null;
+  }
 
 }
