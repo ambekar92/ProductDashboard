@@ -292,7 +292,7 @@ const routes: Routes = [
 
       //Login
 
-      { path: '', loadChildren: () => LoginModule, data: { extraParameter: 'loginMenu' } },
+      { path: '', loadChildren: './login/login.module#LoginModule', data: { extraParameter: 'loginMenu' } },
 
 
       // User Pages
