@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JobcardGenerationService } from '../services/jobcard-generation/jobcard-generation.service';
 import { JobcardGenerationApiService } from '../services/jobcard-generation/jobcard-generation-api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-jobcard-generation',
@@ -11,9 +12,12 @@ export class JobcardGenerationComponent implements OnInit {
 
   edit: boolean = false;
   table: boolean = false;
+  elementType: 'url' | 'canvas' | 'img' = 'url';
+  value: string;
+  noOfPrint: number = 1;
   // confirm: boolean = false;
   // submit: boolean = true;
-  constructor(public jobcardGenerationService: JobcardGenerationService, public jobcardGenerationApiService: JobcardGenerationApiService) { }
+  constructor(public jobcardGenerationService: JobcardGenerationService, public jobcardGenerationApiService: JobcardGenerationApiService, private router: Router,) { }
 
   ngOnInit() {
     this.jobcardGenerationService.fetchOrderNumberList();
@@ -43,6 +47,7 @@ export class JobcardGenerationComponent implements OnInit {
       this.table = true;
     }
     this.jobcardGenerationApiService.orderNumber = value.order_number;
+    this.value = value.order_number;
     this.jobcardGenerationApiService.plantCode = value.plant_code;
     this.jobcardGenerationService.fetchOrderDetails();
   }
@@ -67,5 +72,11 @@ export class JobcardGenerationComponent implements OnInit {
     // this.confirm = false;
     this.jobcardGenerationApiService.confirmStatus = 1;
     this.jobcardGenerationService.confirmOrderDetails();
+  }
+
+  printPage() {
+
+    this.jobcardGenerationApiService.no_of_prints = this.noOfPrint;
+    this.router.navigate(['/qrcode-print']); 
   }
 }

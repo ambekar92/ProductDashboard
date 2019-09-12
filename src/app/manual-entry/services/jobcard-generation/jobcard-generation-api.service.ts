@@ -14,6 +14,7 @@ export class JobcardGenerationApiService {
   OrderNumberArray: any;
   status: any = 0;
   confirmStatus: any;
+  no_of_prints: any;
   separateArray: any = [];
 
   OrderDetailsArray: any = [{

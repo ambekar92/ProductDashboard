@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { QRCodeModule } from 'angularx-qrcode';
 import { NgxPrintModule } from 'ngx-print';
+import { NgxQRCodeModule } from 'ngx-qrcode2'; 
 
 @NgModule({
   declarations: [JobcardGenerationComponent, FileUploadComponent],
@@ -19,7 +20,8 @@ import { NgxPrintModule } from 'ngx-print';
     FormsModule,
     NgbModule,
     QRCodeModule,
-    NgxPrintModule
+    NgxPrintModule,
+    NgxQRCodeModule
   ]
 })
 export class ManualEntryModule { }

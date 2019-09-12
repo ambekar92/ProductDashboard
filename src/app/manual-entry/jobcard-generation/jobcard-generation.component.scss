@@ -1,4 +1,19 @@
 .vcenter {
-    margin-top: auto;
-    margin-bottom: auto;
+margin: auto;
 }
+
+.print {
+    display:none !important;
+}
+
+@media print {
+
+  .noPrint {
+    display:none !important;
+  }
+
+  .print {
+    display:block !important;
+}
+        
+   }

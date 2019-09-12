@@ -141,6 +141,8 @@ import { MatProgressBarComponent } from './DemoPages/Material/ButtonsIndicators/
 import { DashboardModule } from './dashboard/dashboard.module';
 import { ManualEntryModule } from './manual-entry/manual-entry.module';
 import { LoginModule } from './login/login.module';
+import { QrcodePrintComponent } from './qrcode-print/qrcode-print.component';
+
 
 const routes: Routes = [
 
@@ -158,6 +160,7 @@ const routes: Routes = [
       // SCH Dashboards
       { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule', data: { extraParameter: 'customDashboardsMenu' } },
       { path: 'manual-entry', loadChildren: './manual-entry/manual-entry.module#ManualEntryModule' , data: { extraParameter: 'manualEntryMenu' } },
+      { path: 'tab', loadChildren: './tab/tab.module#TabModule' , data: { extraParameter: 'tabMenu' } },
 
       // Dashboards
       // { path: '', component: AnalyticsComponent, data: { extraParameter: 'dashboardsMenu' } },
@@ -294,6 +297,7 @@ const routes: Routes = [
 
       { path: '', loadChildren: './login/login.module#LoginModule', data: { extraParameter: 'loginMenu' } },
 
+      { path: 'qrcode-print', component: QrcodePrintComponent},
 
       // User Pages
 

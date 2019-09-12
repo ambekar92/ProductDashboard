@@ -278,6 +278,8 @@ import {MatProgressBarComponent} from './DemoPages/Material/ButtonsIndicators/ma
 import { DataTableComponent } from './common-components/data-table/data-table.component';
 import { QRCodeModule } from 'angularx-qrcode';
 import {NgxPrintModule} from 'ngx-print';
+import { QrcodePrintComponent } from './qrcode-print/qrcode-print.component';
+import { NgxQRCodeModule } from 'ngx-qrcode2'; 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -461,6 +463,7 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     MatProgressBarComponent,
     NgbdSortableHeaderDirective,
     DataTableComponent,
+    QrcodePrintComponent,
 
   ],
   imports: [
@@ -468,6 +471,7 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     //Add Ons
     QRCodeModule,
     NgxPrintModule,
+    NgxQRCodeModule, 
 
     BrowserModule,
     AppRoutingModule,
