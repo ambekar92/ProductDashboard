@@ -6,16 +6,8 @@
       <div class="card-header">
         <div class="card-header-title">Tab Configuration</div>
         <div class="btn-actions-pane-right">
-          <select type="select" id="exampleCustomSelect" name="customSelect" class="custom-select">
-            <option value="">Select Line</option>
-            <option>Line 1</option>
-            <option>Line 2</option>
-            <option>Line 3</option>
-            <option>Line 4</option>
-            <option>Line 5</option>
-            <option>Line 6</option>
-            <option>Line 7</option>
-            <option>Line 8</option>
+          <select type="select" #LineSelect name="customSelect" class="custom-select" (change)="onSelect(LineSelect.value)">
+            <option *ngFor="let lineDrop of tabConfigApiService.LineListArray" [value]="lineDrop.line_code">{{lineDrop.line_code}}</option>
           </select>
         </div>
       </div>
@@ -24,27 +16,31 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="main-card mb-3 card">
-              <ul class="list-group list-group-flush" *ngFor="let data of sampleArray">
+              <ul class="list-group list-group-flush" *ngFor="let machineData of tabConfigApiService.MachineListArray">
                 <li class="list-group-item">
                   <!-- <div class="widget-content p-0">
                     <div class="widget-content-wrapper"> -->
                   <div class="row">
                     <div class="col-md-3">
-                      <div class="heading">{{data.id}}.</div>
+                      <!-- <div class="heading">{{1}}.</div> -->
+                      <b class="d-block mb-1">{{machineData.id}}.</b>
                     </div>
                     <div class="col-md-3">
-                      <div class="heading">{{data.oper}}</div>
+                      <!-- <div class="heading">{{machineData.wrk_ctr_desc}}</div> -->
+                      <b class="d-block mb-1">{{machineData.wrk_ctr_desc}} ({{machineData.oper_name}})</b>
                     </div>
                     <div class="col-md-3 text-center">
-                      <div class="heading">
-                        <select type="select" id="tabid" name="customSelect" class="custom-select" >
-                          <option *ngFor="let drop of tabArray">{{drop.tab}}</option>
+                      <div class="heading" *ngIf="machineData.assign_status != 1">
+                        <select type="select" #TabSelect name="customSelect" class="custom-select" (change)="onTabSelect(TabSelect.value)">
+                          <option *ngFor="let tabDrop of tabConfigApiService.TabListArray" [value]="tabDrop.tab_code">{{tabDrop.tab}}</option>
                         </select>
                       </div>
+                      <b class="d-block mb-1" *ngIf="machineData.assign_status == 1">Assigned Tab: {{machineData.tab_name}}</b>
                     </div>
                     <div class="col-md-3 text-right">
                       <div role="group" class="btn-group-sm btn-group">
-                        <button type="button" class="btn-shadow btn btn-primary">Assign</button>
+                        <button type="button" class="btn-shadow btn btn-primary" *ngIf="machineData.assign_status != 1" (click)="onAssign(machineData.mach_code)">Assign</button>
+                        <button type="button" class="btn-shadow btn btn-primary" *ngIf="machineData.assign_status == 1" (click)="onUnAssign(machineData.tab_code)">Unassign</button>
                       </div>
                     </div>
                   </div>

@@ -1,36 +1,60 @@
 import { Component, OnInit } from '@angular/core';
+import { TabConfigService } from '../services/tab-config/tab-config.service';
+import { TabConfigApiService } from '../services/tab-config/tab-config-api.service';
 
 @Component({
   selector: 'app-tab-config',
   templateUrl: './tab-config.component.html',
   styleUrls: ['./tab-config.component.scss']
 })
+
+
 export class TabConfigComponent implements OnInit {
+  // btnStatus:boolean = false;
 
-  sampleArray: any = [
-    {"id": "1", "oper": "Operation 1"},
-    {"id": "2", "oper": "Operation 2"},
-    {"id": "3", "oper": "Operation 3"},
-    {"id": "4", "oper": "Operation 4"},
-    {"id": "5", "oper": "Operation 5"},
-    {"id": "6", "oper": "Operation 6"},
-  ];
-
-  tabArray: any = [
-    {"id": "0", "tab": "Select"},
-    {"id": "1", "tab": "Tab 1"},
-    {"id": "2", "tab": "Tab 2"},
-    {"id": "3", "tab": "Tab 3"},
-    {"id": "4", "tab": "Tab 4"},
-    {"id": "5", "tab": "Tab 5"},
-    {"id": "6", "tab": "Tab 6"},
-    {"id": "7", "tab": "Tab 7"},
-    {"id": "8", "tab": "Tab 8"},
-  ]
-  constructor() { }
+  constructor(public tabConfigService: TabConfigService, public tabConfigApiService: TabConfigApiService) { }
 
   ngOnInit() {
-    // document.getElementById("tabid").selectedIndex = "2";
+    this.tabConfigService.fetchLineList();
+    this.tabConfigService.fetchMachineDetails();
+    this.tabConfigService.fetchTabList();
   }
 
+
+  onSelect(value){
+    this.tabConfigApiService.lineCode = value;
+    this.tabConfigService.fetchMachineDetails();
+    this.tabConfigService.fetchTabList();
+  }
+
+  onTabSelect(value){
+    this.tabConfigApiService.tabCode = value;
+    debugger;
+    let i: any;
+    for(i=0; i<this.tabConfigApiService.TabListArray.length; i++){
+      if(value == this.tabConfigApiService.TabListArray[i].tab_code){
+        if(this.tabConfigApiService.TabListArray[i].assign_status==1){
+          alert('Assigned :'+this.tabConfigApiService.TabListArray[i].tab);
+          //this.btnStatus=true;
+        }
+      }else{
+       // this.btnStatus=false;
+      }
+    }
+  }
+
+  onAssign(mach_code){
+    this.tabConfigApiService.machineCode = mach_code;
+    this.tabConfigApiService.assgnStatus = 1;
+    this.tabConfigApiService.empId = localStorage.getItem('UserName');
+    this.tabConfigService.assignUnassignTab();
+  }
+
+  onUnAssign(tab_code){
+    this.tabConfigApiService.machineCode = 0;
+    this.tabConfigApiService.assgnStatus = 0;
+    this.tabConfigApiService.empId = 0;
+    this.tabConfigApiService.tabCode = tab_code;
+    this.tabConfigService.assignUnassignTab();
+  }
 }

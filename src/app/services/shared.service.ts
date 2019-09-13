@@ -7,6 +7,7 @@ export class SharedService {
 
   // public BaseURL = "http://"+ this.getCurrentIP() + ":4200/";
   // public BaseURL: any = "http://172.16.16.161:4200/";
+  // public BaseURL2: any = "http://172.16.16.111:4200/";
   public BaseURL: any = "http://61.12.64.92:4200/";
 
 
