@@ -53,12 +53,25 @@ export class TabConfigService {
         });
         this.fetchMachineDetails();
         this.fetchTabList();
+        this.fetchOverview();
       }else{
         this._snackBar.open(response.msg, "", {
           duration: 2000,
         });
         this.fetchMachineDetails();
         this.fetchTabList();
+        this.fetchOverview();
+      }
+    })
+  }
+
+  //fetch tab overview
+  fetchOverview(){
+    this.tabConfigApiService.fetchOverviewApi()
+    .subscribe((response: any) => {
+      if(response.status == 1){
+        this.tabConfigApiService.ProdArray = response.data[0];
+        this.tabConfigApiService.QualArray = response.data[1];
       }
     })
   }

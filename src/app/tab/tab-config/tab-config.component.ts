@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TabConfigService } from '../services/tab-config/tab-config.service';
 import { TabConfigApiService } from '../services/tab-config/tab-config-api.service';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-tab-config',
@@ -12,12 +13,20 @@ import { TabConfigApiService } from '../services/tab-config/tab-config-api.servi
 export class TabConfigComponent implements OnInit {
   // btnStatus:boolean = false;
 
-  constructor(public tabConfigService: TabConfigService, public tabConfigApiService: TabConfigApiService) { }
+  constructor(public tabConfigService: TabConfigService, public tabConfigApiService: TabConfigApiService, private modalService: NgbModal) { }
+
+  open(content) {
+    this.modalService.open(content, {
+      size: 'lg'
+    });
+  }
+
 
   ngOnInit() {
     this.tabConfigService.fetchLineList();
     this.tabConfigService.fetchMachineDetails();
     this.tabConfigService.fetchTabList();
+    this.tabConfigService.fetchOverview();
   }
 
 
@@ -29,7 +38,7 @@ export class TabConfigComponent implements OnInit {
 
   onTabSelect(value){
     this.tabConfigApiService.tabCode = value;
-    debugger;
+
     let i: any;
     for(i=0; i<this.tabConfigApiService.TabListArray.length; i++){
       if(value == this.tabConfigApiService.TabListArray[i].tab_code){

@@ -10,6 +10,8 @@ export class TabConfigApiService {
   LineListArray: any = [];
   MachineListArray: any = [];
   TabListArray: any = [];
+  ProdArray: any = [];
+  QualArray: any = [];
   lineCode: any = "LINE_01";
   machineCode: any;
   assgnStatus: any;
@@ -66,6 +68,11 @@ export class TabConfigApiService {
     };
 
     return this.http.post(this.sharedService.BaseURL + 'assigntab', JSON.stringify(data), requestOptions);
+  }
+
+  //fetching overview
+  fetchOverviewApi() {
+    return this.http.get(this.sharedService.BaseURL + 'gettaboverview')
   }
 
 
