@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TabConfigComponent } from './tab-config/tab-config.component';
+import { TabConfig2Component } from './tab-config2/tab-config2.component';
 
 const routes: Routes = [
   {
@@ -10,7 +11,7 @@ const routes: Routes = [
   },
   {
     path: 'tab-config',
-    component: TabConfigComponent
+    component: TabConfig2Component
   },
 ];
 

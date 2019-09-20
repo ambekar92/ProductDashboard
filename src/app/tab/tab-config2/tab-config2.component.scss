@@ -1,0 +1,34 @@
+.tdCell {
+  background: #e0e0e0;
+  color: rgb(0, 0, 0);
+}
+
+.tdCell:hover {
+  background: #c5c5c5;
+}
+
+// .btn.btn-outline-primary {
+//     color: #fff;
+//     background-color: rgb(105, 106, 109);
+//     border-color: #FFFFFF;
+//   }
+
+  .btn.btn-outline-success.focus,
+  .btn.btn-outline-success:focus {
+    color: #fff;
+    background-color: #3ac47d;
+    border-color: #3ac47d;
+    outline: none;
+    box-shadow: none;
+  }
+
+  .btn.btn-outline-secondary.focus,
+  .btn.btn-outline-secondary:focus {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+    outline: none;
+    box-shadow: none;
+  }
+
+ 

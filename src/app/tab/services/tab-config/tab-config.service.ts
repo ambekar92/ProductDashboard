@@ -51,14 +51,14 @@ export class TabConfigService {
         this._snackBar.open(response.msg, "", {
           duration: 2000,
         });
-        this.fetchMachineDetails();
+        this.fetchMachineDetails2();
         this.fetchTabList();
         this.fetchOverview();
       }else{
         this._snackBar.open(response.msg, "", {
           duration: 2000,
         });
-        this.fetchMachineDetails();
+        this.fetchMachineDetails2();
         this.fetchTabList();
         this.fetchOverview();
       }
@@ -75,6 +75,18 @@ export class TabConfigService {
       }
     })
   }
+
+  //-----------------------------------------------------------------------------------------------------------------------
+    //fetch machine details 2
+    fetchMachineDetails2(){
+      this.tabConfigApiService.fetchMachineDetailsApi2()
+      .subscribe((response: any)=> {
+        if(response.status == 1){
+          this.tabConfigApiService.MachineListArray2 = response.data;
+          // console.log(this.tabConfigApiService.MachineListArray2[0][0].line_code);
+        }
+      })
+    }
 
 
 }

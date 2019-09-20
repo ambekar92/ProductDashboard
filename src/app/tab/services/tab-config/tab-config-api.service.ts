@@ -17,6 +17,11 @@ export class TabConfigApiService {
   assgnStatus: any;
   empId: any;
   tabCode: any;
+  oldTabCode: any;
+  MachineListArray2: any = [];
+  //-----------------------------------------------------------------------------------------------------------------------------
+
+
 
   constructor(public sharedService: SharedService, public http: HttpClient) { }
 
@@ -56,7 +61,8 @@ export class TabConfigApiService {
       "mach_code": this.machineCode,
       "assign_status": this.assgnStatus,
       "emp_id": this.empId,
-      "tab_code": this.tabCode
+      "tab_code": this.tabCode,
+      "old_tab_code": this.oldTabCode
     }
 
     const headerDict = {
@@ -74,6 +80,13 @@ export class TabConfigApiService {
   fetchOverviewApi() {
     return this.http.get(this.sharedService.BaseURL + 'gettaboverview')
   }
+
+  //------------------------------------------------------------------------------------------------------------------
+
+    //fetching line list
+    fetchMachineDetailsApi2() {
+      return this.http.get(this.sharedService.BaseURL + 'getlinedetails')
+    }
 
 
 }

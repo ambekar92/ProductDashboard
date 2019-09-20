@@ -1,0 +1,269 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card main-card mb-3">
+
+      <div class="card-header">
+        <div class="card-header-title">Tab Configuration</div>
+        <div class="btn-actions-pane-right">
+          <ng-template #content1 let-c="close" let-d="dismiss">
+            <div class="modal-header">
+              <h4 class="modal-title">Tab Configuration Overview</h4>
+              <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <table class="mb-0 table table-bordered text-center">
+                <tr>
+                  <th></th>
+                  <th>Line 1</th>
+                  <th>Line 2</th>
+                  <th>Line 3</th>
+                  <th>Line 4</th>
+                  <th>Line 5</th>
+                  <th>Line 6</th>
+                  <th>Line 7</th>
+                  <th>Line 8</th>
+                </tr>
+                <tr>
+                  <th>Production</th>
+                  <td class="tdCell" *ngIf="tabConfigApiService.ProdArray[0].tab_name != '-'">
+                    {{tabConfigApiService.ProdArray[0].tab_name}}</td>
+                  <td *ngIf="tabConfigApiService.ProdArray[0].tab_name == '-'">
+                    {{tabConfigApiService.ProdArray[0].tab_name}}</td>
+                  <td class="tdCell" *ngIf="tabConfigApiService.ProdArray[1].tab_name != '-'">
+                    {{tabConfigApiService.ProdArray[1].tab_name}}</td>
+                  <td *ngIf="tabConfigApiService.ProdArray[1].tab_name == '-'">
+                    {{tabConfigApiService.ProdArray[1].tab_name}}</td>
+                  <td class="tdCell" *ngIf="tabConfigApiService.ProdArray[2].tab_name != '-'">
+                    {{tabConfigApiService.ProdArray[2].tab_name}}</td>
+                  <td *ngIf="tabConfigApiService.ProdArray[2].tab_name == '-'">
+                    {{tabConfigApiService.ProdArray[2].tab_name}}</td>
+                  <td class="tdCell" *ngIf="tabConfigApiService.ProdArray[3].tab_name != '-'">
+                    {{tabConfigApiService.ProdArray[3].tab_name}}</td>
+                  <td *ngIf="tabConfigApiService.ProdArray[3].tab_name == '-'">
+                    {{tabConfigApiService.ProdArray[3].tab_name}}</td>
+                  <td class="tdCell" *ngIf="tabConfigApiService.ProdArray[4].tab_name != '-'">
+                    {{tabConfigApiService.ProdArray[4].tab_name}}</td>
+                  <td *ngIf="tabConfigApiService.ProdArray[4].tab_name == '-'">
+                    {{tabConfigApiService.ProdArray[4].tab_name}}</td>
+                  <td class="tdCell" *ngIf="tabConfigApiService.ProdArray[5].tab_name != '-'">
+                    {{tabConfigApiService.ProdArray[5].tab_name}}</td>
+                  <td *ngIf="tabConfigApiService.ProdArray[5].tab_name == '-'">
+                    {{tabConfigApiService.ProdArray[5].tab_name}}</td>
+                  <td class="tdCell" *ngIf="tabConfigApiService.ProdArray[6].tab_name != '-'">
+                    {{tabConfigApiService.ProdArray[6].tab_name}}</td>
+                  <td *ngIf="tabConfigApiService.ProdArray[6].tab_name == '-'">
+                    {{tabConfigApiService.ProdArray[6].tab_name}}</td>
+                  <td class="tdCell" *ngIf="tabConfigApiService.ProdArray[7].tab_name != '-'">
+                    {{tabConfigApiService.ProdArray[7].tab_name}}</td>
+                  <td *ngIf="tabConfigApiService.ProdArray[7].tab_name == '-'">
+                    {{tabConfigApiService.ProdArray[7].tab_name}}</td>
+                </tr>
+                <tr>
+                  <th>Quality</th>
+                  <td class="tdCell" *ngIf="tabConfigApiService.QualArray[0].tab_name != '-'">
+                    {{tabConfigApiService.QualArray[0].tab_name}}</td>
+                  <td *ngIf="tabConfigApiService.QualArray[0].tab_name == '-'">
+                    {{tabConfigApiService.QualArray[0].tab_name}}</td>
+                  <td class="tdCell" *ngIf="tabConfigApiService.QualArray[1].tab_name != '-'">
+                    {{tabConfigApiService.QualArray[1].tab_name}}</td>
+                  <td *ngIf="tabConfigApiService.QualArray[1].tab_name == '-'">
+                    {{tabConfigApiService.QualArray[1].tab_name}}</td>
+                  <td class="tdCell" *ngIf="tabConfigApiService.QualArray[2].tab_name != '-'">
+                    {{tabConfigApiService.QualArray[2].tab_name}}</td>
+                  <td *ngIf="tabConfigApiService.QualArray[2].tab_name == '-'">
+                    {{tabConfigApiService.QualArray[2].tab_name}}</td>
+                  <td class="tdCell" *ngIf="tabConfigApiService.QualArray[3].tab_name != '-'">
+                    {{tabConfigApiService.QualArray[3].tab_name}}</td>
+                  <td *ngIf="tabConfigApiService.QualArray[3].tab_name == '-'">
+                    {{tabConfigApiService.QualArray[3].tab_name}}</td>
+                  <td class="tdCell" *ngIf="tabConfigApiService.QualArray[4].tab_name != '-'">
+                    {{tabConfigApiService.QualArray[4].tab_name}}</td>
+                  <td *ngIf="tabConfigApiService.QualArray[4].tab_name == '-'">
+                    {{tabConfigApiService.QualArray[4].tab_name}}</td>
+                  <td class="tdCell" *ngIf="tabConfigApiService.QualArray[5].tab_name != '-'">
+                    {{tabConfigApiService.QualArray[5].tab_name}}</td>
+                  <td *ngIf="tabConfigApiService.QualArray[5].tab_name == '-'">
+                    {{tabConfigApiService.QualArray[5].tab_name}}</td>
+                  <td class="tdCell" *ngIf="tabConfigApiService.QualArray[6].tab_name != '-'">
+                    {{tabConfigApiService.QualArray[6].tab_name}}</td>
+                  <td *ngIf="tabConfigApiService.QualArray[6].tab_name == '-'">
+                    {{tabConfigApiService.QualArray[6].tab_name}}</td>
+                  <td class="tdCell" *ngIf="tabConfigApiService.QualArray[7].tab_name != '-'">
+                    {{tabConfigApiService.QualArray[7].tab_name}}</td>
+                  <td *ngIf="tabConfigApiService.QualArray[7].tab_name == '-'">
+                    {{tabConfigApiService.QualArray[7].tab_name}}</td>
+                </tr>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" (click)="c('Close click')">Close</button>
+            </div>
+          </ng-template>
+          <button type="button" class="btn-shadow btn btn-light" (click)="open1(content1)">OVERVIEW</button>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="main-card mb-3 card">
+              <ul class="list-group list-group-flush" *ngFor="let data of tabConfigApiService.MachineListArray2">
+                <li class="list-group-item">
+                  <div class="row text-center">
+                    <div class="col-md-4">
+                      <b>{{data.line_code}}</b>
+                    </div>
+                    <div class="col-md-4">
+                      <b style="padding-right: 8%">Production :&nbsp;</b>
+                      <button type="button" (click)="open2(content2, data.p_mach_code, data.prd_tab_code, data.prd_tab)" class="btn-shadow btn btn-primary" *ngIf="data.prd_assign_status == '0'">Assign</button>
+                      <button type="button" (click)="open2(content2, data.p_mach_code, data.prd_tab_code, data.prd_tab)" class="btn-shadow btn btn-success" *ngIf="data.prd_assign_status == '1'">{{data.prd_tab}}</button>
+                    </div>
+                    <div class="col-md-4 text-center">
+                      <b style="padding-right: 8%">Quality :&nbsp;</b>
+                      <button type="button" (click)="open2(content2, data.q_mach_code, data.qlty_tab_code, data.qlty_tab)" class="btn-shadow btn btn-primary" *ngIf="data.qlty_assign_status == '0'">Assign</button>
+                      <button type="button" (click)="open2(content2, data.q_mach_code, data.qlty_tab_code, data.qlty_tab)" class="btn-shadow btn btn-success" *ngIf="data.qlty_assign_status == '1'">{{data.qlty_tab}}</button>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card-body">
+  <ng-template #content2 let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h3 class="modal-title" *ngIf="tabNum == 0">TABS</h3>
+      <h3 class="modal-title" *ngIf="tabNum != 0">{{tabName}}</h3>
+      <div class="btn-actions-pane-right">
+        <button class="btn-hover-shine btn-shadow btn btn-secondary" *ngIf="tabNum != 0" (click)="unAssign(d('Cross click'))" style="margin: 0 6% 0 -6%;">UNASSIGN</button>
+        <button class="btn-hover-shine btn-shadow btn btn-success" (click)="assign(d('Cross click'))">ASSIGN</button>
+      </div>
+    </div>
+    <div class="modal-body">
+          <div class="grid-menu grid-menu-2col">
+              <div class="no-gutters row">
+                <div class="col-sm-6" *ngFor="let tab of tabConfigApiService.TabListArray">
+                    <button class="btn-icon-vertical btn-square btn-transition btn btn-outline-secondary" (click)="tabSelect(tab.tab_code)" *ngIf="tab.assign_status == 1" style="cursor: no-drop" disabled><i class="pe-7s-browser btn-icon-wrapper"> </i>{{tab.tab_name}}</button>
+                    <button class="btn-icon-vertical btn-square btn-transition btn btn-outline-success" (click)="tabSelect(tab.tab_code)" *ngIf="tab.assign_status == 0"><i class="pe-7s-browser btn-icon-wrapper"> </i><b>{{tab.tab_name}}</b></button>
+                </div>
+              </div>
+            </div>
+    </div>
+  </ng-template>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <app-page-title [heading]="heading" [subheading]="subheading" [icon]="icon"></app-page-title>
+  
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card main-card mb-3">
+        <div class="card-header">
+          <div class="card-header-title">Tab Configuration</div>
+           <div class="btn-actions-pane-right">
+            <select type="select" #LineSelect name="customSelect" class="custom-select" (change)="onSelect(LineSelect.value)">
+              <option *ngFor="let lineDrop of tabConfigApiService.LineListArray" [value]="lineDrop.line_code">{{lineDrop.line_code}}</option>
+            </select>
+          </div> 
+        </div>
+  
+        <div class="card-body">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="main-card mb-3 card">
+                 <ul class="list-group list-group-flush" *ngFor="let machineData of tabConfigApiService.MachineListArray"> 
+                  <li class="list-group-item">
+                     <div class="widget-content p-0">
+                      <div class="widget-content-wrapper"> 
+                    <div class="row">
+                      <div class="col-md-3">
+                         <div class="heading">{{1}}.</div> 
+                        <b class="d-block mb-1">Line 1</b>
+                      </div>
+                      <div class="col-md-3">
+                       <div class="heading">{{machineData.wrk_ctr_desc}}</div>
+                        <span>Production:   </span>
+                        <button type="button" class="btn-shadow btn btn-primary">assign</button>
+                      </div>
+  
+  
+                      <div class="col-md-3 text-center">
+                         <div class="heading" *ngIf="machineData.assign_status != 1">
+                          <select type="select" #TabSelect name="customSelect" class="custom-select" (change)="onTabSelect(TabSelect.value)">
+                            <option *ngFor="let tabDrop of tabConfigApiService.TabListArray" [value]="tabDrop.tab_code">{{tabDrop.tab}}</option>
+                          </select>
+                        </div> 
+                        <span>Quality :</span>
+                        <button type="button" class="btn-shadow btn btn-primary">assign</button>
+                        <b class="d-block mb-1" *ngIf="machineData.assign_status == 1">Assigned Tab</b>
+                      </div>
+  
+  
+  
+                      <div class="col-md-3 text-right">
+                        <div role="group" class="btn-group-sm btn-group">
+                          <button type="button" class="btn-shadow btn btn-primary" *ngIf="machineData.assign_status != 1" (click)="onAssign(machineData.mach_code)">Assign</button>
+                          <button type="button" class="btn-shadow btn btn-primary" *ngIf="machineData.assign_status == 1" (click)="onUnAssign(machineData.tab_code)">Unassign</button>
+                        </div>
+                      </div>
+                    </div>
+                     <div class="widget-content-left mr-3">
+                          <div class="widget-heading">1.</div>
+                        </div>
+                        <div class="widget-content-left">
+                          <div class="widget-heading">Operation 1</div>
+                        </div>
+                        <div class="widget-content-center">
+                            <div class="widget-heading">Operation 1</div>
+                          </div>
+                        <div class="widget-content-right">
+                          <div role="group" class="btn-group-sm btn-group">
+                            <button type="button" class="btn-shadow btn btn-primary">Save</button>
+                          </div>
+                        </div> 
+                   </div>
+                    </div>
+                  </li>
+  
+                 </ul> 
+  
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div> -->
